@@ -1,0 +1,95 @@
+//Общие стили
+// Применимые к нескольким блокам
+
+@import "adaptive-value.scss";
+.btn {
+	height: 80px;
+	background-color: #2870db;
+	box-shadow: 0px 22px 24px 0px rgba(17, 83, 165, 0.2);
+	border-radius: 40px;
+	font-size: 20px;
+	line-height: 40px;
+	font-weight: 600;
+	color: #fbfcfc;
+	transition: 0.7s;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	transition: 0.8s;
+	margin: 0px 0px 10px 0px;
+	position: relative;
+
+	@include adaptive-value("width", 240, 200);
+	@media (any-hover: hover) {
+		&:hover {
+			background-color: #0d6af5;
+		}
+	}
+}
+
+.smalltitle {
+	line-height: 35px;
+	font-weight: 700;
+	color: #263238;
+	@include adaptive-value("font-size", 24, 18);
+}
+
+.title {
+	span {
+		display: block;
+	}
+	text-align: center;
+
+	font-size: 36px;
+	line-height: 45px;
+	font-weight: 700;
+	color: #263238;
+	@include adaptive-value("font-size", 36, 22);
+}
+
+.content {
+	position: relative;
+	z-index: 3;
+}
+
+//Стиль для ошибки при вводе неправильного емайла в инпут =========================
+
+.error-block {
+	span {
+		font-size: 18px;
+		color: white;
+	}
+	position: absolute;
+	width: auto;
+	height: auto;
+	z-index: 6;
+	font-weight: 700;
+}
+
+//============================================================
+
+.footer-text {
+	color: white;
+	font-size: 16px;
+	line-height: 30px;
+	font-weight: 400;
+	text-transform: none;
+	letter-spacing: normal;
+	a {
+		color: white;
+		font-size: 16px;
+		line-height: 30px;
+		font-weight: 400;
+		text-transform: none;
+		letter-spacing: normal;
+		@media (max-width: 790px) {
+			
+		
+		}
+	}
+
+	@media (max-width: 790px) {
+		
+		
+	}
+}

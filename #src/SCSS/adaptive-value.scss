@@ -1,0 +1,63 @@
+
+$maxWidth:1200;
+$maxHeader:1435;
+
+
+
+
+//Адаптивный миксин
+@mixin adaptive-value($property,$startSize,$minSize,$type:1) {
+	$addsize: $startSize - $minSize;
+    @if $type==1{
+		#{$property}:$startSize + px;
+		@media(max-width: #{$maxWidth + px}){
+		   #{$property}:calc(#{$minSize + px} + #{$addsize} * ((100vw - 320px) / (#{$maxWidth - 320})));
+		}
+	} @else{
+		#{$property}:calc(#{$minSize + px} + #{$addsize} * ((100vw - 320px) / (#{$maxWidth - 320})));
+	}
+		
+
+
+}
+
+
+
+
+
+
+//Адаптивный миксинДля шапки
+@mixin adaptive-header($property,$startSize,$minSize,$type:1) {
+	$addsize: $startSize - $minSize;
+    @if $type==1{
+		#{$property}:$startSize + px;
+		@media(max-width: #{$maxHeader + px}){
+		   #{$property}:calc(#{$minSize + px} + #{$addsize} * ((100vw - 320px) / (#{$maxHeader - 320})));
+		}
+	} @else{
+		#{$property}:calc(#{$minSize + px} + #{$addsize} * ((100vw - 320px) / (#{$maxHeader - 320})));
+	}
+		
+
+
+}
+
+
+._ibg{
+
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: relative;
+	}
+	
+	._ibg img{
+	
+	width: 0;
+	height: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	visibility: hidden;
+	}
